@@ -1,0 +1,36 @@
+package com.fan.e3.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.fan.e3.mapper.TbItemMapper;
+import com.fan.e3.pojo.TbItem;
+import com.fan.e3.pojo.TbItemExample;
+import com.fan.e3.pojo.TbItemExample.Criteria;
+import com.fan.e3.service.ItemService;
+
+@Service("itemService")
+public class ItemServiceImpl implements ItemService {
+	
+	@Autowired
+	private TbItemMapper itemMapper;
+
+	@Override
+	public TbItem getTbItemById(Long id) {
+		//方式一: 根据主键查询
+		//TbItem item = itemMapper.selectByPrimaryKey(id);
+		//方式二: 可以设置查询条件
+		TbItemExample itemExample = new TbItemExample();
+		Criteria criteria = itemExample.createCriteria();
+		//设置查询条件
+		criteria.andIdEqualTo(id);
+		List<TbItem> list = itemMapper.selectByExample(itemExample);
+		if(list!=null&&list.size()>0){
+			return list.get(0);
+		}
+		return null;
+	}
+
+}

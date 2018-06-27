@@ -1,0 +1,6 @@
+com\fan\e3\search\message\MyMessageListener.class
+com\fan\e3\search\message\ItemAddMessageListener.class
+com\fan\e3\search\service\impl\SearchServiceImpl.class
+com\fan\e3\search\dao\SearchDao.class
+com\fan\e3\search\service\impl\SearchItemServiceImpl.class
+com\fan\e3\search\mapper\ItemMapper.class

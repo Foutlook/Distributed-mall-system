@@ -1,0 +1,3 @@
+com\fan\e3\sso\service\impl\LoginServiceImpl.class
+com\fan\e3\sso\service\impl\RegisterServiceImpl.class
+com\fan\e3\sso\service\impl\TokenServiceImpl.class
